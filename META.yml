@@ -1,5 +1,5 @@
 name: Kwiki-Notify-IRC
-version: 0.01
+version: 0.02
 abstract: announce updates to your Kwiki on IRC channels
 author: Ian Langworth <langworth.com>
 license: perl

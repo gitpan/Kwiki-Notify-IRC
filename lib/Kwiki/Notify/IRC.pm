@@ -4,7 +4,7 @@ use strict;
 use Kwiki::Plugin '-Base';
 use mixin 'Kwiki::Installer';
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 const class_id => 'notify_irc';
 const class_title => 'Kwiki page edit notification via IRC';
@@ -12,7 +12,7 @@ const config_file => 'notify_irc.yaml';
 
 sub register {
     my $registry = shift;
-    $registry->add(page_store_hook => 'update');
+    $registry->add(page_hook_store => 'update');
 }
 
 sub update {
@@ -166,11 +166,11 @@ sub bot_default {
 sub update {
     my ($kernel,$heap,$meta) = @_[KERNEL,HEAP,ARG0];
     eval {
-        my $msg = sprintf('action update: %s by %s on %s', 
-            $meta->{id}, $meta->{edit_by}, scalar localtime(time) );
+        my $msg = sprintf('action update: %s by %s', 
+            $meta->{id}, $meta->{edit_by} );
         $kernel->post(bot=>ctcp=>"#$_",$msg)
             foreach split /,\s+/, $config->{notify_irc_server_channels};
-        msg $msg;
+        msg "$msg on " . localtime(time);
     };
     err "update error: $@" if $@;
 }

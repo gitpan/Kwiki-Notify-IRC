@@ -1,4 +1,10 @@
 ---
+version: 0.02
+date:    Thu Aug 26 00:51:45 EDT 2004
+changes:
+- changed page_store_hook to page_hook_store
+- i meant for the timestamp to appear in console log, not in chat
+---
 version: 0.01
 date:    Wed Aug 25 00:26:17 EDT 2004
 changes:
