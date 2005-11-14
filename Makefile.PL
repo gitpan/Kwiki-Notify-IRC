@@ -2,7 +2,7 @@ use inc::Module::Install;
 
 name('Kwiki-Notify-IRC');
 abstract('announce updates to your Kwiki on IRC channels');
-author('Ian Langworth <langworth.com>');
+author('Ian Langworth <ian@cpan.org>');
 version_from('lib/Kwiki/Notify/IRC.pm');
 license('perl');
 
