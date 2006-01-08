@@ -6,7 +6,7 @@ use lib 'lib';
 use Kwiki::Plugin -Base;
 use mixin 'Kwiki::Installer';
 
-our $VERSION = "0.04";
+our $VERSION = '0.05';
 
 const class_id    => 'notify_irc';
 const class_title => 'Kwiki page edit notification via IRC';

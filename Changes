@@ -1,4 +1,9 @@
 ---
+version: 0.05
+date:    Sun Jan  8 10:32:49 EST 2006
+changes:
+    - Fixed versions in Makefile.PL
+---
 version: 0.04
 date:    Sun Nov 13 23:24:08 EST 2005
 changes:
